@@ -1,3 +1,5 @@
+import os
+
 from flask import (
     Blueprint,
     flash,
@@ -18,6 +20,7 @@ bp = Blueprint(blueprint_url, __name__, url_prefix=f"/{blueprint_url}")
 def todo_befor_app_request():
     # todo
     g.whatever = "fill something you want by adding params of g."
+    g.secretkey = os.environ.get("SECRET_KEY")
 
 
 # BaseURL/blueprint
@@ -33,5 +36,6 @@ def blue_root():
 @bp.route("/useg", methods=["GET"] )
 def use_g():
     return {
-        "g": g.whatever
+        "g": g.whatever,
+        "secretkey": g.secretkey 
     }

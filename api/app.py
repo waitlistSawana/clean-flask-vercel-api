@@ -2,7 +2,6 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# 官方的示例 所有的东西都在./下完成
 
 @app.route('/')
 def home():
@@ -17,12 +16,9 @@ def get():
 @app.route("/post", methods=['POST'])
 def post():
     data = request.get_json()
-    if data is None:
-        return "fail to get data"
-    else:
-        return {
-            "whatyoupost": data
-        }    
+    return {
+        "whatyoupost": data
+    }    
 
 
 @app.route("/double", methods=("GET", "POST"))
@@ -42,11 +38,8 @@ def double():
 
 # register bluepirnt
 from . import blueprint
-if 'bp' not in app.blueprints:
-    app.register_blueprint(blueprint.bp)
-else:
-    print('Blueprint already exists, skipping registration.')
+app.register_blueprint(blueprint.bp)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

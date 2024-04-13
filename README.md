@@ -24,7 +24,19 @@
 
 你可以直接将clone或者fork本项目，在自己的 vercel 上部署运行，并尝试访问。
 
-这个例子使用了Web服务器网关接口（WSGI）与Flask结合，在Vercel上使用无服务器函数来处理请求。
+这个例子使用了Web服务器网关接口（WSGI）与Flask结合，在Vercel上使用无服务器函数来处理请求。 
+
+主程序在 `api/app.py`
+
+以下路由可以尝试访问：
+```bash
+/ # 首页路由
+/get # GET 请求方法
+/post # POST 请求方法
+/double # 同时接收和处理 GET 和 POST 请求
+/blueprint # 在 blueprint 文件中编写路由
+/blueprint/useg # blueprint 的更长路由 / 使用 g 参数
+```
 
 ## 本地运行 
 

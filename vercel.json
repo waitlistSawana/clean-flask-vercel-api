@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/app.py", "use": "@vercel/python" },
-    { "src": "api/blueprint.py", "use": "@vercel/python" }
+    { "src": "api/app.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
+    { "src": "api/blueprint.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "api/app.py" }

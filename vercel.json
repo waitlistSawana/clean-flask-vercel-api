@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/cleanflask" }
+  ],
+  "builds": [
+    { "src": "cleanflask/__init__.py", "use": "@vercel/python" },
+    { "src": "cleanflask/blueprint.py", "use": "@vercel/python" },
+    { "src": "cleanflask/db.py", "use": "@vercel/python" },
+    { "src": "cleanflask/lib/text_smile.py", "use": "@vercel/python" }
+  ]
+}

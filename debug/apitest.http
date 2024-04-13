@@ -1,4 +1,5 @@
 # "REST Client" from Exensions
+# 记得安装 “ REST Client ” 插件
 
 @baseUri=http://localhost:3000
 

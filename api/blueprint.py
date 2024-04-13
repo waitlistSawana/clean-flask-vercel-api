@@ -26,16 +26,10 @@ def todo_befor_app_request():
 # BaseURL/blueprint
 @bp.route("/")
 def blue_root():
-    return {
-        "msg": "there is blueprint"
-    }
-
+    return {"msg": "there is blueprint"}
 
 
 # BaseURL/blueprint
-@bp.route("/useg", methods=["GET"] )
+@bp.route("/useg", methods=["GET"])
 def use_g():
-    return {
-        "g": g.whatever,
-        "secretkey": g.secretkey 
-    }
+    return {"g": g.whatever, "secretkey": g.secretkey}

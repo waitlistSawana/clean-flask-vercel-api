@@ -1,23 +1,35 @@
 # "REST Client" from Exensions
 
-@baseUri=http://127.0.0.1:5050
+@baseUri=http://localhost:3000
 
-### root
+### root - app
 GET {{baseUri}}/
 
-### blueprint
-GET {{baseUri}}/blueprint/bluehello
-Content-Type: application/json
+### get - app
+GET {{baseUri}}/get
 
-### Get add smile
-GET {{baseUri}}/blueprint/smile
-
-### Post add smil
-POST {{baseUri}}/blueprint/smile
+### post - app
+POST {{baseUri}}/post
 Content-Type: application/json
 
 {
-    "msg": "i get a text?"
+  "msg": "hello? couly you get it?"
 }
 
 
+### double get - app
+GET {{baseUri}}/double
+
+### double post - app
+POST {{baseUri}}/double
+Content-Type: application/json
+
+{
+  "msg": "a post for doule"
+}
+
+### Blueprint - blueprint
+GET {{baseUri}}/blueprint/
+
+### Blueprint - g - blueprint
+GET {{baseUri}}/blueprint/useg

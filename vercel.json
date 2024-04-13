@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/cleanflask" }
-  ],
   "builds": [
-    { "src": "cleanflask/__init__.py", "use": "@vercel/python" },
-    { "src": "cleanflask/blueprint.py", "use": "@vercel/python" },
-    { "src": "cleanflask/db.py", "use": "@vercel/python" },
-    { "src": "cleanflask/lib/text_smile.py", "use": "@vercel/python" }
+    { "src": "api/app.py", "use": "@vercel/python" },
+    { "src": "api/blueprint.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/app.py" }
   ]
 }

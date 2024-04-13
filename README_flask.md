@@ -27,14 +27,6 @@ https://flask.palletsprojects.com/en/3.0.x/
 生成依赖文件: `pipenv install flask` 
 
 
-## 本地运行
-
-```bash
-npm i -g vercel
-vercel dev
-```
-
- 
 ## 安装项目文件
 
 启动虚拟环境并启用：

@@ -48,14 +48,6 @@ npm i -g vercel
 vercel dev
 ```
 
-### flask run
-
-```bash
-cd ./api
-set FLASK_APP=app.py
-flask run --debugger --reload
-```
-
 会出现几个设置问题，设置完毕后，你可以通过这个网址接收数据： `http://localhost:3000`.
 
 ## Debug 测试
@@ -75,8 +67,8 @@ flask run --debugger --reload
   "version": 2,
   "builds": [
     { "src": "api/app.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
-    { "src": "api/blueprint/blueprint.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
-    { "src": "api/lib/libhandler.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
+    { "src": "api/blueprint.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
+    { "src": "api/libhandler.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
     { "src": "api/lib/index_example.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } }
   ],
   "routes": [

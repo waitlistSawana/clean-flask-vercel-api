@@ -31,10 +31,10 @@ def double():
 
 
 # register bluepirnt
-from blueprint import blueprint
+from . import blueprint
 app.register_blueprint(blueprint.bp)
 
-from blueprint import libhandler
+from . import libhandler
 app.register_blueprint(libhandler.bp)
 
 # 锁定输出格式为 utf-8

@@ -11,7 +11,7 @@ from flask import (
     url_for,
 )
 
-from lib.index_example import index_example
+from api.lib.index_example import index_example
 
 # router for blueprint
 blueprint_url = "lib"
@@ -27,7 +27,7 @@ def todo_befor_app_request():
 
 # BaseURL/lib
 @bp.route("/")
-def blue_root():
+def lib_root():
     text = "this is lib index (or other name you like)"
     msg = index_example(text)
     return {

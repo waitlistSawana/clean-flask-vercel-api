@@ -31,9 +31,11 @@ def double():
 
 
 # register bluepirnt
-from . import blueprint
-
+from blueprint import blueprint
 app.register_blueprint(blueprint.bp)
+
+from blueprint import libhandler
+app.register_blueprint(libhandler.bp)
 
 
 if __name__ == "__main__":

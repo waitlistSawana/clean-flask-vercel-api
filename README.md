@@ -8,11 +8,11 @@
 
 项目有如下特性：
 
-- 修复了官方模板 pyhton 版本不适配的 bug ：现在你可以在 vercel 上直接部署上线。
+- 修复了官方模板 pyhton 版本不适配的 bug -- 现在你可以在 vercel 上直接部署上线。
 
-- 增加蓝图文件：提供可拓展性，通过 blueprint.py 文件增加新的路由，更清晰的结构、更具拓展性。
+- 增加蓝图文件 -- 提供可拓展性，通过 blueprint.py 文件增加新的路由，更清晰的结构、更具拓展性。
 
-- 方便的 Debug 文件：现在你可以直接在 `debug/apitest.http` 文件中测试api，而不必到网页上测试
+- 方便的 Debug 文件 -- 现在你可以直接在 `debug/apitest.http` 文件中测试api，而不必到网页上测试
 
 # Demo
 
@@ -35,14 +35,25 @@
 /post # POST 请求方法
 /double # 同时接收和处理 GET 和 POST 请求
 /blueprint # 在 blueprint 文件中编写路由
-/blueprint/useg # blueprint 的更长路由 / 使用 g 参数
+/blueprint/g # blueprint 的更长路由 / 使用 g 参数
+/lib # 在另一个文件夹创建函数并引用它
 ```
 
 ## 本地运行 
 
+### vercel dev
+
 ```bash
 npm i -g vercel
 vercel dev
+```
+
+### flask run
+
+```bash
+cd ./api
+set FLASK_APP=app.py
+flask run --debugger --reload
 ```
 
 会出现几个设置问题，设置完毕后，你可以通过这个网址接收数据： `http://localhost:3000`.
@@ -64,7 +75,9 @@ vercel dev
   "version": 2,
   "builds": [
     { "src": "api/app.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
-    { "src": "api/blueprint.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } }
+    { "src": "api/blueprint/blueprint.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
+    { "src": "api/lib/libhandler.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } },
+    { "src": "api/lib/index_example.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" } }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "api/app.py" }
@@ -72,7 +85,7 @@ vercel dev
 }
 ```
 
-builds: 为了让 python 文件顺利运行，你需要“标记”它们，告诉 vercel 怎么运行他们。`{ "src": "api/app.py", "use": "@vercel/python", }`。另外，记得将 `runtime` 设置为 python 3.9。
+`builds` -- 为了让 python 文件顺利运行，你需要“标记”它们，告诉 vercel 怎么运行他们。`{ "src": "api/app.py", "use": "@vercel/python", }`。另外，记得将 `runtime` 设置为 python 3.9。
 
 ### `package.json`
 

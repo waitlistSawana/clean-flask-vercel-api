@@ -1,7 +1,8 @@
 # "REST Client" from Exensions
 # 记得安装 “ REST Client ” 插件
 
-@baseUri=http://localhost:3000
+# @baseUri=http://localhost:3000 
+@baseUri=http://127.0.0.1:5000 
 
 ### root - app
 GET {{baseUri}}/
@@ -33,4 +34,7 @@ Content-Type: application/json
 GET {{baseUri}}/blueprint/
 
 ### Blueprint - g - blueprint
-GET {{baseUri}}/blueprint/useg
+GET {{baseUri}}/blueprint/g
+
+### lib
+GET {{baseUri}}/lib

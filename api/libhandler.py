@@ -11,8 +11,10 @@ from flask import (
     url_for,
 )
 
+from api.lib.index_example import index_example
+
 # router for blueprint
-blueprint_url = "blueprint"
+blueprint_url = "lib"
 bp = Blueprint(blueprint_url, __name__, url_prefix=f"/{blueprint_url}")
 
 
@@ -23,13 +25,12 @@ def todo_befor_app_request():
     g.secretkey = os.environ.get("SECRET_KEY")
 
 
-# BaseURL/blueprint
+# BaseURL/lib
 @bp.route("/")
-def blue_root():
-    return {"msg": "there is blueprint"}
-
-
-# BaseURL/blueprint
-@bp.route("/g", methods=["GET"])
-def use_g():
-    return {"g": g.whatever, "secretkey": g.secretkey}
+def lib_root():
+    text = "this is lib index (or other name you like)"
+    msg = index_example(text)
+    return {
+        "msg": text,
+        "msg_new": msg
+    }

@@ -32,9 +32,14 @@ def double():
 
 # register bluepirnt
 from . import blueprint
-
 app.register_blueprint(blueprint.bp)
 
+from . import libhandler
+app.register_blueprint(libhandler.bp)
+
+# 锁定输出格式为 utf-8
+app.config['JSON_AS_ASCII'] = False
+app.config['JSONIFY_MIMETYPE'] = "application/json;charset=utf-8"
 
 if __name__ == "__main__":
     app.run(debug=False)

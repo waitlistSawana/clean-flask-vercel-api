@@ -37,6 +37,9 @@ app.register_blueprint(blueprint.bp)
 from blueprint import libhandler
 app.register_blueprint(libhandler.bp)
 
+# 锁定输出格式为 utf-8
+app.config['JSON_AS_ASCII'] = False
+app.config['JSONIFY_MIMETYPE'] = "application/json;charset=utf-8"
 
 if __name__ == "__main__":
     app.run(debug=False)

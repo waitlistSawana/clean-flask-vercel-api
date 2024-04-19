@@ -1,3 +1,5 @@
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FwaitlistSawana%2Fclean-flask-vercel-api.git)
+
 # Clean Flask with Vercel 
 
 这个项目能让你迅速启用一个基于 Python 的后端接口，为你的网站提供基于 Python 服务器支持。欢迎⭐！
@@ -14,7 +16,7 @@
 
 - 方便的 Debug 文件 -- 现在你可以直接在 `debug/apitest.http` 文件中测试api，而不必到网页上测试
 
-# Demo
+## Demo
 
 [示例网站地址](https://demo-flask-vercel.sawana.site/)
 
@@ -22,7 +24,11 @@
 
 ## 直接部署生效
 
-你可以直接将clone或者fork本项目，在自己的 vercel 上部署运行，并尝试访问。
+点击按钮立刻部署！
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FwaitlistSawana%2Fclean-flask-vercel-api.git)
+
+你也可以直接clone或者fork本项目，在自己的 vercel 上部署运行，并尝试访问。
 
 这个例子使用了Web服务器网关接口（WSGI）与Flask结合，在Vercel上使用无服务器函数来处理请求。 
 
@@ -91,7 +97,11 @@ vercel dev
 
 node 20.x 版本在vercel上无法识别 python 3.9，我们在这里指定 node 版本。
 
-## 联系方式
+## 立即部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FwaitlistSawana%2Fclean-flask-vercel-api.git)
+
+## 关于我
 
 我是一个正在学习和实现网站开发的开发者，希望在今年运营出一个 MRR $100 的作品。
 
